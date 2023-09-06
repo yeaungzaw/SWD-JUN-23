@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+
+<body class="bg-gray-50 px-4 flex flex-col gap-y-6">
+
+    <!-- Nav -->
+    <nav class="flex justify-between items-center mt-6">
+
+        <!-- image -->
+        <img class="w-12 h-12 rounded-full object-cover object-center border-2 border-gray-400" src="../img/profile.jpg" alt="">
+
+        <!-- icons -->
+        <div class="flex gap-x-6">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" fill="#000000" viewBox="0 0 256 256">
+                    <path
+                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.22-11.22ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                    </path>
+                </svg>
+            </span>
+
+            <span class="relative">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#000000" viewBox="0 0 256 256">
+                    <path
+                        d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z">
+                    </path>
+                </svg>
+
+                <p class="text-sm text-white absolute top-0 right-0 translate-x-[25%] translate-y-[-45%] rounded-full bg-red-500 px-[6px]">1</p>
+            </span>
+
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#000000" viewBox="0 0 256 256">
+                    <path
+                        d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm56-12a12,12,0,1,0,12,12A12,12,0,0,0,196,116ZM60,116a12,12,0,1,0,12,12A12,12,0,0,0,60,116Z">
+                    </path>
+                </svg>
+            </span>
+        </div>
+
+    </nav>
+
+    <h1 class="font-bold text-3xl">My Tasks</h1>
+
+
+    <!-- Tasks -->
+    <div class="border-b-2 text-gray-500 pb-2">
+
+        <ul class="flex gap-x-4 justify-evenly">
+            <li><a class="border-b-blue-600 border-b-2 pb-[11px]" href="">To-do</a></li>
+            <li><a href="">Due Soon</a></li>
+            <li><a href="">In Review</a></li>
+            <li><a href="">Complete</a></li>
+        </ul>
+
+    </div>
+
+
+    <!-- Cards Parent -->
+    <div class="flex flex-col gap-y-4">
+
+        <!-- 1st Card -->
+        <div class="bg-white rounded-lg p-4">
+
+            <!-- title and icon -->
+            <div class="flex justify-between">
+
+                <div>
+                    <p class="text-md">Week 1 College Tasks</p>
+                    <p class="opacity-50 mb-2">Firday, 5 November 2021</p>
+                </div>
+
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" fill="gray" viewBox="0 0 256 256">
+                        <path
+                            d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm56-12a12,12,0,1,0,12,12A12,12,0,0,0,196,116ZM60,116a12,12,0,1,0,12,12A12,12,0,0,0,60,116Z">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+
+
+
+            <div class="flex items-center gap-x-4">
+
+                <div class="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700">
+                    <div class="bg-purple-600 h-1 rounded-full" style="width: 20%"></div>
+                </div>
+
+                <p class="opacity-50">25%</p>
+
+            </div>
+        </div>
+
+
+        <!-- 2nd Card -->
+        <div class="bg-white rounded-lg p-4">
+
+            <!-- title and icon -->
+            <div class="flex justify-between">
+
+                <div>
+                    <p class="text-md">Coporate Web Design</p>
+                    <p class="opacity-50 mb-2">Monday, 8 November 2021</p>
+                </div>
+
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" fill="gray" viewBox="0 0 256 256">
+                        <path
+                            d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm56-12a12,12,0,1,0,12,12A12,12,0,0,0,196,116ZM60,116a12,12,0,1,0,12,12A12,12,0,0,0,60,116Z">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+
+
+
+            <div class="flex items-center gap-x-4">
+
+                <div class="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700">
+                    <div class="bg-orange-600 h-1 rounded-full" style="width: 75%"></div>
+                </div>
+
+                <p class="opacity-50">75%</p>
+
+            </div>
+        </div>
+
+        <!-- 3rd Card -->
+        <div class="bg-white rounded-lg p-4">
+
+            <!-- title and icon -->
+            <div class="flex justify-between">
+
+                <div>
+                    <p class="text-md">Week 1 College Tasks</p>
+                    <p class="opacity-50 mb-2">Firday, 5 November 2021</p>
+                </div>
+
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" fill="gray" viewBox="0 0 256 256">
+                        <path
+                            d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm56-12a12,12,0,1,0,12,12A12,12,0,0,0,196,116ZM60,116a12,12,0,1,0,12,12A12,12,0,0,0,60,116Z">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+
+
+
+            <div class="flex items-center gap-x-4">
+
+                <div class="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700">
+                    <div class="bg-pink-600 h-1 rounded-full" style="width: 50%"></div>
+                </div>
+
+                <p class="opacity-50">50%</p>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Plus Button -->
+    <span class="self-end my-6">
+        <svg class="bg-blue-500 p-4 rounded-md" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#fff" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg>
+    </span>
+
+</body>
+
+</html>

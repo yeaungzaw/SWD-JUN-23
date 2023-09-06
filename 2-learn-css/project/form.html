@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="p">
+    <main>
+
+        <section class="mb">
+
+            <form action="">
+                <fieldset class="reg-box">
+                    <legend class="form-title">Register Form</legend>
+
+                    <div class="form-group">
+                        <label class="form-label" for="yourName">
+                            <i class="fa-solid fa-fw fa-user"></i>
+                            Your Name
+                        </label>
+                        <input class="form-input" type="text" name="your_name" id="yourName">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="yourEmail">
+                            <i class="fa-solid fa-fw fa-envelope"></i>
+                            Your Email
+                        </label>
+                        <input class="form-input" type="email" name="your_email" id="yourEmail">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="yourPassword">
+                            <i class="fa-solid fa-fw fa-lock"></i>
+                            Password
+                        </label>
+                        <input class="form-input" type="password" name="password" id="yourPassword">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="position">
+                            <i class="fa-solid fa-fw fa-briefcase"></i>
+                            Apply Position
+                        </label>
+                        <select class="form-select" name="position" id="position">
+                            <option value="frontend">Frontend Developer</option>
+                            <option value="backend">Backend Developer</option>
+                            <option value="devops">Devops</option>
+                            <option value="fullstack-developer">Fullstack Developer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="position">
+                            <i class="fa-solid fa-fw fa-cog"></i>
+                            Select Your Skills
+                        </label>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="html" value="html" name="skills">
+                            <label for="html">HTML</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="css" value="css" name="skills">
+                            <label for="css">CSS</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="js" value="js" name="skills">
+                            <label for="js">JavaScript</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="php" value="php" name="skills">
+                            <label for="php">PHP</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="sql" value="sql" name="skills">
+                            <label for="sql">SQL</label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-dark reg-btn">Register</button>
+                </fieldset>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <div style="height: 1000px;"></div>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <style>
+        .slide-img {
+            height: 500px;
+            object-fit: cover;
+            object-position: top;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="m-3 border border-primary p-3">
+
+        <h3 class="text-primary fw-bold bg-primary-subtle p-3 text-center">Bootstrap Buttons</h3>
+        <h3 class="text-secondary fw-bold text-decoration-underline">Bootstrap Buttons</h3>
+        <h3 class="text-success fw-bold text-decoration-underline">Bootstrap Buttons</h3>
+        <h3 class="text-danger fw-bold text-decoration-underline">Bootstrap Buttons</h3>
+        <h3 class="text-warning fw-bold text-decoration-underline">Bootstrap Buttons</h3>
+        <h3 class="text-info fw-bold text-decoration-underline">Bootstrap Buttons</h3>
+
+        <h3 class="text-dark fw-bold text-decoration-underline">Bootstrap Buttons</h3>
+        <h3 class="text-white fw-bold text-decoration-underline">Bootstrap Buttons</h3>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque officia consequuntur ducimus earum soluta
+            eos laboriosam nulla illum modi sapiente, a et eius facilis aliquam possimus magnam minima. Ab, dolores!
+        </p>
+
+        <div>
+            <label for="" class="form-label">Your Name</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <br>
+
+        <button class="btn btn-primary">Click Me</button>
+        <button class="btn btn-secondary">Click Me</button>
+        <button class="btn btn-dark">Click Me</button>
+        <button class="btn btn-danger">Click Me</button>
+        <button class="btn btn-success">Click Me</button>
+        <button class="btn btn-warning">Click Me</button>
+    </div>
+
+    <br>
+
+    <div class="border border-primary border-4 rounded-3 m-3 p-5 d-inline-block"></div>
+    <div class="border border-primary border-4 rounded-circle m-3 p-5 d-inline-block"></div>
+    <div class="border border-primary border-4 rounded-end-circle m-3 p-5 d-inline-block"></div>
+    <div class="border border-primary border-4 rounded-start-circle m-3 p-5 d-inline-block"></div>
+
+    <br>
+
+    <div class="border border-success border-4 rounded-3 m-3 p-5 d-inline-block w-50"></div>
+
+    <br>
+
+    <div class="border border-dark" style="height: 300px;">
+        <div class="border border-success border-4 rounded-3 m-3 p-5 d-inline-block w-25 h-50"></div>
+    </div>
+
+    <div class="border border-primary border-4 rounded-3 p-5" style="height: 300px;">
+
+        <div class="border w-50 mx-auto border-primary border-4 rounded-3 p-5"></div>
+
+    </div>
+
+    <br>
+
+    <p class="text-body-secondary">
+        Secondary body text with a <a href="#" class="text-reset">reset link</a>
+    </p>
+
+    <div class="p-3">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+
+        <input type="text" class="form-control">
+
+        <button class="btn btn-primary">Click Me</button>
+
+        <button class="bg-warning border-0 p-2 rounded-2">Btn with utilities</button>
+    </div>
+
+    <hr>
+
+    <div class="p-3">
+
+        <!-- Accordion component -->
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        MySelf
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium autem neque assumenda
+                        laudantium eaque placeat suscipit rem sapiente error tempore nostrum, nisi illo cupiditate atque
+                        excepturi voluptate, magni mollitia totam?
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        About MMS
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit aut esse sint incidunt vel
+                        obcaecati aliquid odio rerum! In doloremque facilis molestias tenetur. Maiores odit, quod iure
+                        eligendi magnam dolores.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Accordion New
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- Carousel component -->
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/poe-mamhe-thar-2.jpg" class="d-block w-100 slide-img" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/poe-mamhe-thar-3.jpeg" class="d-block w-100 slide-img" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/poe-mamhe-thar-6.jpg" class="d-block w-100 slide-img" alt="...">
+                </div>
+            </div>
+
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button> -->
+
+        </div>
+
+        <br><br>
+
+        <button class="btn btn-primary mt-3" data-bs-target="#carouselExample" data-bs-slide="prev">Prev</button>
+
+        <button class="btn btn-primary mt-3" data-bs-target="#carouselExample" data-bs-slide="next">Next</button>
+
+        <br><br>
+
+        <!-- Modal component -->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">My Modal Box</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus officiis rem
+                            necessitatibus doloremque perspiciatis vel exercitationem dolorem, ea omnis sequi sit
+                            delectus porro enim ex nulla? Modi nihil temporibus laborum!
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, id, optio, quam alias
+                            eveniet minus iusto asperiores autem architecto commodi est ipsam perspiciatis. Corporis,
+                            temporibus sequi officia assumenda illum error.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- Offcanva (Homework) -->
+        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+            aria-controls="offcanvasExample">
+            Link with href
+        </a>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample">
+            Button with data-bs-target
+        </button>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">MMS IT</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae corrupti cumque inventore tenetur
+                    odio possimus fugiat perspiciatis, cum eligendi voluptatum. Iste nihil perspiciatis ea. Adipisci
+                    nulla maiores suscipit natus corrupti!
+                </div>
+                <div class="dropdown mt-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        Click Me
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Home</a></li>
+                        <li><a class="dropdown-item" href="#">Services</a></li>
+                        <li><a class="dropdown-item" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br><br>
+
+        <!-- Spinners component -->
+
+        <div class="spinner-border text-danger"></div>
+        <div class="spinner-border text-warning"></div>
+        <div class="spinner-grow text-success"></div>
+        <div class="spinner-grow text-primary"></div>
+        <div class="spinner-grow"></div>
+
+        <br>
+        <br>
+
+        <button class="btn btn-primary">
+            <span class="spinner-border spinner-border-sm"></span>
+            Submit
+        </button>
+
+        <button class="btn btn-primary">
+            <span class="spinner-grow spinner-grow-sm"></span>
+            Submit
+        </button>
+
+        <br>
+        <br>
+
+        <!-- Alerts Component -->
+        <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+        </div>
+        <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+        </div>
+        <div class="alert alert-success" role="alert">
+            A simple success alert—check it out!
+        </div>
+        <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+        </div>
+        <div class="alert alert-warning" role="alert">
+            A simple warning alert—check it out!
+        </div>
+        <div class="alert alert-info" role="alert">
+            A simple info alert—check it out!
+        </div>
+        <div class="alert alert-light" role="alert">
+            A simple light alert—check it out!
+        </div>
+        <div class="alert alert-dark" role="alert">
+            A simple dark alert—check it out!
+        </div>
+
+        <!-- Alert with Icon -->
+        <div class="alert alert-primary d-flex align-items-center" role="alert">
+            <svg width="20px" xmlns="http://www.w3.org/2000/svg"
+                class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
+                aria-label="Warning:">
+                <path
+                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+            <div>
+                An example alert with an icon
+            </div>
+        </div>
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <br><br>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

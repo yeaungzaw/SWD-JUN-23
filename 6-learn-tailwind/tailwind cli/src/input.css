@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply bg-blue-600 text-white px-2.5 py-1.5 rounded-md hover:bg-transparent hover:border-[2px] hover:border-blue-500 hover:text-black transition-all duration-300
+    }
+}

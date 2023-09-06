@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            border: 2px solid black;
+            transition: 0.5s;
+        }
+
+        h1:hover {
+            background-color: skyblue;
+        }
+
+        h1:active {
+            background-color: pink;
+        }
+
+        input {
+
+        }
+
+        input:focus {
+            background-color: black;
+            color: white;
+        }
+
+        input:focus-visible {
+            outline: none;
+        }
+
+        button {
+
+        }
+
+        button:focus {
+            background-color: black;
+            color: white;
+        }
+
+        .box {
+            margin-bottom: 50px;
+        }
+
+        .box:focus-within {
+            background-color: aqua;
+        }
+
+        .poe {
+            opacity: 0.8;
+            /* visibility: hidden; */
+        }
+
+        .poe-box {
+            background-image: url(./assets/images/pattern.png);
+            background-size: 100px;
+            width: 200px;
+        }
+
+        .text-box {
+            width: 300px;
+            height: 300px;
+            border: 5px solid black;
+            overflow-y: scroll;
+            margin-bottom: 50px;
+        }
+
+        .float-box {
+            border: 5px solid black;
+            margin-bottom: 50px;
+        }
+
+        .boss-baby {
+            float: left;
+        }
+
+        .aa-box {
+            border: 5px solid black;
+            padding: 10px;
+            width: 300px;
+            word-break: break-all;
+        }
+
+        .white-space {
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <h1>Min Ga Lar Par</h1>
+    <div class="box">
+        <p>hello</p>
+
+        <input type="text" name="" id="">
+        <input type="text" name="" id="">
+        <br><br>
+        <button>Click Me One</button>
+        <button>Click Me Two</button>
+        <button>Click Me Three</button>
+    </div>
+    <div class="poe-box">
+        <img class="poe" width="200px" src="./assets/images/poe-mamhe-thar-2.jpg" alt="">
+    </div>
+    <div class="text-box">
+        <h1>San Kyi Tar</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatum aspernatur voluptatibus atque cum facere, id perspiciatis! Veritatis beatae quos ad necessitatibus neque optio placeat obcaecati soluta nemo aut! Accusantium.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatum aspernatur voluptatibus atque cum facere, id perspiciatis! Veritatis beatae quos ad necessitatibus neque optio placeat obcaecati soluta nemo aut! Accusantium.</p>       
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatum aspernatur voluptatibus atque cum facere, id perspiciatis! Veritatis beatae quos ad necessitatibus neque optio placeat obcaecati soluta nemo aut! Accusantium.</p>
+    </div>
+
+    <div class="float-box">
+        <h2>Boss Baby</h2>
+        <img width="100" class="boss-baby" src="./assets/images/The-Boss-Baby-PNG-High-Quality-Image.png" alt="">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat minima necessitatibus illo iste molestias dolore nostrum eum commodi dicta dolorem. Amet sunt fugit quasi autem esse iure facilis repudiandae veritatis?
+        </p>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="aa-box">
+        Lorem ipsum dolor, sit amet consectetursefsfsdfsfsfsfsfsdfsdfarwrweresfsesfsdsfssfdf adipisicing elit. Adipisci minus perspiciatis asperiores rerum, error, at laboriosam sint dolore commodi hic repudiandae totam. Iusto impedit, accusamus rem assumenda obcaecati alias corporis.
+    </div>
+
+    <h2 class="white-space">Min     Ga      Lar     Par</h2>
+
+
+    <div style="height: 100px;">
+
+    </div>
+</body>
+</html>

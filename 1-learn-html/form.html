@@ -1,0 +1,106 @@
+<form action="https://mms-it.com" method="post">
+    <fieldset>
+        <legend>Register Form</legend>
+
+        <input type="hidden" name="id" value="5">
+
+        <div>
+            <label for="your_photo">Your Photo</label>
+            <input type="file" id="your_photo" name="photo">
+        </div>
+        <br>
+
+        <div>
+            <label for="your_name">Your Name</label>
+            <input type="text" id="your_name" name="name" value="hhz">
+        </div>
+        <br>
+
+        <div>
+            <label for="your_email">Email</label>
+            <input type="email" id="your_email" name="email" placeholder="example@gmail.com" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="bd">Date of Birth</label>
+            <input type="date" id="bd" name="birth" max="2003-01-01">
+        </div>
+        <br>
+
+        <div>
+            <label for="salary">Salary</label>
+            <input type="number" id="salary" name="salary" min="200000" max="250000">
+        </div>
+        <br>
+
+        <div>
+            <label for="Working-hours">Working Hours</label>
+            <input type="range" id="Working-hours" name="Working-hours" max="8" step="2">
+        </div>
+        <br>
+
+        <hr>
+        <div>
+            <label>Gender</label>
+
+            <div>
+                <input type="radio" name="gender" value="male">
+                <label for="male">Male</label>
+            </div>
+
+
+            <div>
+                <input type="radio" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+        <hr>
+
+        <hr>
+        <div>
+            <label for="nation">Nation</label>
+            <select name="nation" id="nation">
+                <option value="mm">Myanmar</option>
+                <option value="sg">Singapore</option>
+                <option value="th">Thailand</option>
+                <option value="kr">Korea</option>
+            </select>
+        </div>
+        <hr>
+
+        <hr>
+        <div>
+            <label for="">Skills</label>
+
+            <div>
+                <input type="checkbox" id="html" name="html">
+                <label for="html">HTML</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="css" name="css">
+                <label for="css">CSS</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="js" name="js">
+                <label for="js">JavaScript</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="php" name="php">
+                <label for="php">PHP</label>
+            </div>
+        </div>
+        <hr>
+
+        <button type="submit">Register</button>
+    </fieldset>
+</form>
