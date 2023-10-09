@@ -20,10 +20,6 @@
 // document.body.append(p);
 
 
-// p element to body 
-// document.body.append(p);
-
-
 
 const app = document.createElement("main");
 app.classList.add("p-5", "border-4", "m-5");
