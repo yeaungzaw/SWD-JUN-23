@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rubik:wght@400;500;600;700&display=swap');
 
+/* Link Animate.Style */
+@import url(
+    '../node_modules/animate.css/animate.min.css'
+);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

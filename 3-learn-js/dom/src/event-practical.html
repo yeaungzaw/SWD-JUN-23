@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Event Practical</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body>
+
+    <div class="max-w-[550px] border border-neutral-700 mx-auto mt-24 p-6">
+
+        <div class="grid grid-cols-3 gap-3">
+
+            <div class="">
+                <label class="mb-3 block text-neutral-600" for="">Select Font</label>
+                <select class="border border-neutral-700 block w-full h-10 focus-visible:outline-none p-2" name="" id="fontChanger">
+                    <option value="">Font A</option>
+                    <option value="">Font B</option>
+                    <option value="">Font C</option>
+                </select>
+            </div>
+
+            <div class="">
+                <label class="mb-3 block text-neutral-600" for="">Text Color</label>
+                <input id="colorChanger" class="border border-neutral-700 block w-full h-10 focus-visible:outline-none p-2" type="color">
+            </div>
+
+            <div class="">
+                <label class="mb-3 block text-neutral-600" for="">Font Size</label>
+                <input id="fontsizeChanger" class="border border-neutral-700 accent-neutral-700 block w-full h-10 focus-visible:outline-none p-2" type="range">
+            </div>
+
+            <div class="col-span-3">
+                <label class="mb-3 block text-neutral-600" for="">Yout Text</label>
+                <textarea class="border border-neutral-700 block w-full focus-visible:outline-none p-2" name="" id="textChanger" cols="30" rows="5"></textarea>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/event-practical.js"></script>
+    
+</body>
+</html>

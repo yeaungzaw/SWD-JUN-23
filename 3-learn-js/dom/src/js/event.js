@@ -65,3 +65,20 @@
 //     event.preventDefault();
 //     console.log('U click link');
 // })
+
+
+// window.addEventListener("scroll", () => {
+//     console.log("U scroll");
+//     console.log(window.scrollY);
+// })
+
+
+// document.addEventListener("mousemove", (event) => {
+//     console.clear(event);
+//     console.log(event);
+// })
+
+
+// document.addEventListener("click", (event) => {
+//     console.log(event.target);
+// })
