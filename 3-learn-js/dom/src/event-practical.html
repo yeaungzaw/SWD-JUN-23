@@ -8,16 +8,18 @@
 </head>
 <body>
 
-    <div class="max-w-[550px] border border-neutral-700 mx-auto mt-24 p-6">
+    <p id="display" class="mt-14 mb-6 max-w-[550px] mx-auto text-[14px]"></p>
+
+    <div class="max-w-[550px] border border-neutral-700 mx-auto p-6">
 
         <div class="grid grid-cols-3 gap-3">
 
             <div class="">
                 <label class="mb-3 block text-neutral-600" for="">Select Font</label>
                 <select class="border border-neutral-700 block w-full h-10 focus-visible:outline-none p-2" name="" id="fontChanger">
-                    <option value="">Font A</option>
-                    <option value="">Font B</option>
-                    <option value="">Font C</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Gargi">Gargi</option>
                 </select>
             </div>
 
@@ -28,11 +30,11 @@
 
             <div class="">
                 <label class="mb-3 block text-neutral-600" for="">Font Size</label>
-                <input id="fontsizeChanger" class="border border-neutral-700 accent-neutral-700 block w-full h-10 focus-visible:outline-none p-2" type="range">
+                <input id="fontsizeChanger" class="border border-neutral-700 accent-neutral-700 block w-full h-10 focus-visible:outline-none p-2" type="range" min="14" max="64" step="1" value="14">
             </div>
 
             <div class="col-span-3">
-                <label class="mb-3 block text-neutral-600" for="">Yout Text</label>
+                <label class="mb-3 block text-neutral-600" for="">Your Text</label>
                 <textarea class="border border-neutral-700 block w-full focus-visible:outline-none p-2" name="" id="textChanger" cols="30" rows="5"></textarea>
             </div>
         </div>

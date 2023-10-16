@@ -82,3 +82,38 @@
 // document.addEventListener("click", (event) => {
 //     console.log(event.target);
 // })
+
+const btn = document.querySelector("#btn");
+
+// const displayConsole = () => {
+//     console.log("Hello Hello");
+// }
+
+// btn.addEventListener("click", displayConsole);
+// btn.addEventListener("dblclick", () => {
+//     console.log("remove event listener");
+//     btn.removeEventListener("click", displayConsole);
+// });
+
+const layer1 = document.querySelector("#layer1");
+const layer2 = document.querySelector("#layer2");
+const layer3 = document.querySelector("#layer3");
+
+
+
+layer1.addEventListener("click", () => {
+    console.log("U click layer1");
+})
+
+layer2.addEventListener("click", () => {
+    console.log("U click layer2");
+})
+
+layer3.addEventListener("click", () => {
+    console.log("U click layer3");
+})
+
+btn.addEventListener("click", (event) => {
+    event.stopPropagation();
+    console.log("U click btn");
+})
