@@ -101,19 +101,81 @@ const layer3 = document.querySelector("#layer3");
 
 
 
-layer1.addEventListener("click", () => {
-    console.log("U click layer1");
-})
+// layer1.addEventListener("click", () => {
+//     console.log("U click layer1");
+// })
 
-layer2.addEventListener("click", () => {
-    console.log("U click layer2");
-})
+// layer2.addEventListener("click", () => {
+//     console.log("U click layer2");
+// })
 
-layer3.addEventListener("click", () => {
-    console.log("U click layer3");
-})
+// layer3.addEventListener("click", () => {
+//     console.log("U click layer3");
+// })
 
-btn.addEventListener("click", (event) => {
-    event.stopPropagation();
-    console.log("U click btn");
+// btn.addEventListener("click", (event) => {
+//     event.stopPropagation();
+//     console.log("U click btn");
+// })
+
+
+// Event Listens to Multiple Elements, Event Delegation
+// const ul = document.querySelector("ul");
+// const lis = document.querySelectorAll("li");
+
+// ul.addEventListener("click", (event) => {
+//     console.log(event.target.innerText);
+// })
+
+// const createLi = (text) => {
+//     const li = document.createElement("li");
+//     li.className = "border active:bg-neutral-400 p-2";
+//     li.innerText = text;
+//     return li;
+// }
+
+
+// lis.forEach((li) => {
+//     // console.log(li);
+
+//     li.addEventListener("click", () => {
+//         console.log(li.innerText);
+//     })
+// })
+
+
+// console.log(ul.children);
+// console.log(lis);
+
+// lis[0].addEventListener("click", () => {
+//     console.log(lis[0].innerText);
+// })
+
+// lis[1].addEventListener("click", () => {
+//     console.log(lis[1].innerText);
+// })
+
+// lis[2].addEventListener("click", () => {
+//     console.log(lis[2].innerText);
+// })
+
+
+const h1 = document.querySelector("h1");
+// h1.addEventListener("click", () => {
+//     console.log(h1.innerText);
+// })
+
+// h1.addEventListener("mouseover", () => {
+//     console.log(h1.innerText);
+// })
+
+// h1.addEventListener("mouseout", () => {
+//     console.log(h1.innerText);
+// })
+
+// Multiple Event Listen
+["click", "mouseover", "mouseout"].forEach((el) => {
+    h1.addEventListener(el, () => {
+        console.log(h1.innerText);
+    })
 })
