@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice App</title>
     <link rel="stylesheet" href="../dist/output.css">
 </head>
+
 <body>
 
     <main id="app">
 
-        <header class="max-w-[550px] mx-auto py-3 mb-10">
+        <header class="sm:max-w-[550px] max-w-[400px] mx-auto py-3 mb-10">
             <h1 class="font-bold text-3xl font-heading">MMS Solutions</h1>
             <p class="text-neutral-500 font-body">Invoice App</p>
         </header>
 
-        <div class="max-w-[550px] mx-auto py-3">
+        <div class="sm:max-w-[550px] max-w-[400px] mx-auto py-3">
             <form id="addRecord" class="mb-5" action="">
                 <div class="grid gap-3 grid-cols-3">
-                    <select class="border border-neutral-600 w-full block p-3" name="product_id" id="">
+                    <select class="border border-neutral-600 w-full block p-3 col-span-3 md:col-span-1"
+                        name="product_id" id="" required>
                         <option value="0">Select Product</option>
                     </select>
-                    <input class="border border-neutral-600 w-full block p-3" type="number" name="quantity" placeholder="Quantity">
-                    <button class="border border-neutral-600 bg-neutral-600 text-white w-full block p-3">Add Record</button>
+                    <input class="border border-neutral-600 w-full block p-3 col-span-2 md:col-span-1" type="number"
+                        name="quantity" placeholder="Quantity" required>
+                    <button class="border border-neutral-600 bg-neutral-600 text-white w-full block p-3">Add
+                        Record</button>
                 </div>
             </form>
 
-            <table class="w-full">
+            <table class="w-full mb-5">
                 <thead class="bg-neutral-600 text-white">
                     <tr class="border-b border-neutral-200">
                         <th class="p-3">#</th>
@@ -60,10 +65,36 @@
                     </tr>
                 </tfoot>
             </table>
+
+            <div  id="manageProductBox" class="fixed w-96 h-screen bg-gray-200 top-0 right-0 flex justify-center items-center translate-x-full">
+
+                <p>
+                    Manage Product
+                </p>
+
+                <button id="closeManageProductBox" class="border border-neutral-500 p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+            </div>
+
+            <div class="flex justify-end gap-3">
+                <button id="manageProduct" class="border border-neutral-600 text-neutral-600 px-3 py-2">
+                    Manage Product
+                </button>
+
+                <button class="border border-neutral-600 bg-neutral-600 text-white px-3 py-2">
+                    Print
+                </button>
+            </div>
         </div>
 
     </main>
-    
+
     <script src="./js/app-invoice.js"></script>
 </body>
+
 </html>
