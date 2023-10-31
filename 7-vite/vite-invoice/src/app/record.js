@@ -1,65 +1,93 @@
+import Swal from "sweetalert2";
 import { products } from "../core/data";
-import { addRecord, app } from "../core/selectors";
+import { addRecord, app, recordList } from "../core/selectors";
 
 export const addRecordHandler = (event) => {
-    event.preventDefault();
-    // collect form data
-    const formData = new FormData(addRecord);
+  event.preventDefault();
+  // collect form data
+  const formData = new FormData(addRecord);
 
-    // find product
-    const { id, name, price } = products.find(
-        (product) => product.id == formData.get("product_id")
+  // find product
+  const { id, name, price } = products.find(
+    (product) => product.id == formData.get("product_id")
+  );
+
+  const isExitedRow = [...app.querySelectorAll("[product-id]")].find((el) => {
+    return el.getAttribute("product-id") == formData.get("product_id");
+  });
+
+  if (isExitedRow) {
+    console.log("update quantity");
+    recordRowQuantityIncrement(
+      formData.get("product_id"),
+      formData.get("quantity")
     );
+  } else {
+    console.log("add new row");
+    recordList.append(
+      createRecordRow(id, name, price, formData.get("quantity"))
+    );
+  }
 
-    const isExitedRow = [...app.querySelectorAll("[product-id]")].find((el) => {
-        return el.getAttribute("product-id") == formData.get("product_id");
-    });
-
-    if (isExitedRow) {
-        console.log("update quantity");
-        recordRowQuantityIncrement(
-            formData.get("product_id"),
-            formData.get("quantity")
-        );
-    } else {
-        console.log("add new row");
-        recordList.append(
-            createRecordRow(id, name, price, formData.get("quantity"))
-        );
-        recordTotal();
-    }
-
-    addRecord.reset();
+  addRecord.reset();
 }
 
 export const recordRowQuantityIncrement = (productId, quantity = 1) => {
-    const currentRecordRow = app.querySelector(`[product-id='${productId}']`);
-    const currentRecordQuantity = currentRecordRow.querySelector(".record-row-q");
-    const currentRecordRowCost =
-        currentRecordRow.querySelector(".record-row-cost");
-    const currentRecordRowPrice =
-        currentRecordRow.querySelector(".record-row-price");
-    currentRecordQuantity.innerText =
-        parseInt(currentRecordQuantity.innerText) + parseInt(quantity);
-    currentRecordRowCost.innerText =
-        currentRecordQuantity.innerText * currentRecordRowPrice.innerText;
-    recordTotal();
+  const currentRecordRow = app.querySelector(`[product-id='${productId}']`);
+  const currentRecordQuantity = currentRecordRow.querySelector(".record-row-q");
+  const currentRecordRowCost =
+    currentRecordRow.querySelector(".record-row-cost");
+  const currentRecordRowPrice =
+    currentRecordRow.querySelector(".record-row-price");
+  currentRecordQuantity.innerText =
+    parseInt(currentRecordQuantity.innerText) + parseInt(quantity);
+  currentRecordRowCost.innerText =
+    currentRecordQuantity.innerText * currentRecordRowPrice.innerText;
 };
 
 export const recordRowDelHandler = (event) => {
-    const recordRow = event.target.closest(".record-row");
-    if (confirm("Are U sure to delete?")) {
-        recordRow.remove();
-        recordTotal();
+  const recordRow = event.target.closest(".record-row");
+
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Confirm'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      recordRow.remove();
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Row deleted successfully ... '
+      })
     }
+  })
+
+  // if (confirm("Are U sure to delete?")) {
+  //     recordRow.remove();
+  // }
 };
 
 export const createRecordRow = (id, productName, productPrice, quantity) => {
-    const recordRow = document.createElement("tr");
-    recordRow.className = "border-b border-neutral-200 group";
-    recordRow.classList.add("record-row");
-    recordRow.setAttribute("product-id", id);
-    recordRow.innerHTML = `
+  const recordRow = document.createElement("tr");
+  recordRow.className = "border-b border-neutral-200 group";
+  recordRow.classList.add("record-row");
+  recordRow.setAttribute("product-id", id);
+  recordRow.innerHTML = `
       <td class="p-3"></td>
       <td class="p-3">${productName}</td>
       <td class="p-3 record-row-price text-end">${productPrice}</td>
@@ -124,18 +152,33 @@ export const createRecordRow = (id, productName, productPrice, quantity) => {
       </td>
       `;
 
-    // const recordRowDel = recordRow.querySelector(".record-row-del");
-    // recordRowDel.addEventListener("click", recordRowDelHandler);
+  // const recordRowDel = recordRow.querySelector(".record-row-del");
+  // recordRowDel.addEventListener("click", recordRowDelHandler);
 
-    return recordRow;
+  return recordRow;
 };
 
 export const recordTotal = () => {
-    //   const recordRowCosts = document.querySelectorAll(".record-row-cost");
-    //   let total = 0;
-    //   recordRowCosts.forEach((el) => (total += parseFloat(el.innerText)));
-    costTotal.innerText = [...app.querySelectorAll(".record-row-cost")].reduce(
-        (pv, cv) => pv + parseFloat(cv.innerText),
-        0
-    );
+  //   const recordRowCosts = document.querySelectorAll(".record-row-cost");
+  //   let total = 0;
+  //   recordRowCosts.forEach((el) => (total += parseFloat(el.innerText)));
+  costTotal.innerText = [...app.querySelectorAll(".record-row-cost")].reduce(
+    (pv, cv) => pv + parseFloat(cv.innerText),
+    0
+  );
 };
+
+export const recordObserver = () => {
+  const processes = () => {
+    console.log("U change in record list");
+    recordTotal();
+  }
+
+  const options = {
+    childList: true,
+    subtree: true,
+  };
+
+  const observer = new MutationObserver(processes);
+  observer.observe(recordList, options);
+}
