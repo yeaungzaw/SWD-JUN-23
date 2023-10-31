@@ -41,6 +41,10 @@ const netCost = app.querySelector("#netCost");
 const manageProduct = app.querySelector("#manageProduct");
 const manageProductBox = app.querySelector("#manageProductBox");
 const closeManageProductBox = app.querySelector("#closeManageProductBox");
+const serviceList = app.querySelector("#serviceList");
+const addService = app.querySelector("#addService");
+const print = app.querySelector("#print");
+
 
 // function
 // const createOption = (content, value) => {
@@ -50,6 +54,43 @@ const closeManageProductBox = app.querySelector("#closeManageProductBox");
 //     return option;
 // }
 
+const createService = (id, name, price) => {
+    const service = document.createElement("div");
+    service.innerHTML = 
+    `
+        <div class="border-2 flex justify-between p-3 mb-3">
+            <p class="text-lg font-bold">${name}</p>
+            <p>
+                <span>$</span> ${price}
+            </p>
+        </div>
+    `;
+
+    return service;
+}
+
+const addServiceHandler = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(addService);
+    const newId = products[products.length - 1].id + 1;
+
+    const newService = {
+        id: newId,
+        name: formData.get("service_name"),
+        price: formData.get("service_price")
+    }
+
+    // data update
+    products.push(newService);
+
+    // ui update
+    serviceList.append(createService(newId, formData.get("service_name"), formData.get("service_price")));
+
+    productSelect.append(new Option(formData.get("service_name"), newId));
+
+    addService.reset();
+}
 
 const createRecordRow = (id, productName, productPrice, quantity) => {
     const recordRow = document.createElement("tr");
@@ -180,10 +221,40 @@ const manageProductHandler = () => {
     manageProductBox.classList.add("duration-300");
 }
 
+const printHandler = () => {
+    // ??
+    const rows = [...app.querySelectorAll(".record-row")];
+    const recordData = rows.map(row => {
+        return {
+            serviceId: parseInt(row.getAttribute("product-id")),
+            quantity: parseInt(row.querySelector(".record-row-q").innerText),
+            cost: parseFloat(row.querySelector(".record-row-cost").innerText)
+        }
+    })
+
+    console.log({
+        customerName: "Kyaw Kyaw",
+        timestamp: Date.now(),
+        total: parseFloat(costTotal.innerText),
+        tax: parseFloat(costTax.innerText),
+        NetCost: parseFloat(netCost.innerText),
+        recordData
+    });
+
+    window.print();
+
+    rows.forEach(row => row.remove());
+    costTotal.innerText = 0;
+    costTax.innerText = 0;
+    netCost.innerText = 0;
+}
+
 // render
-products.forEach(({name, id} )=> {
+products.forEach(({name, id, price} )=> {
     productSelect.append(new Option(name, id));
+    serviceList.append(createService(id, name, price));
 })
+
 
 
 // listener
@@ -194,7 +265,8 @@ recordList.addEventListener("click", (event) => {
     const currentRecordRow = event.target.closest(".record-row");
 
     if (event.target.classList.contains("record-row-del")) {
-        recordRowDelHandler(event);
+        recordRowDelHandler(
+            event);
     } else if (event.target.classList.contains("record-row-increment-q")) {
         recordRowQuantityIncrement(currentRecordRow.getAttribute("product-id"));
     } else if (event.target.classList.contains("record-row-decrement-q")) {
@@ -205,3 +277,7 @@ recordList.addEventListener("click", (event) => {
 manageProduct.addEventListener("click", manageProductHandler);
 
 closeManageProductBox.addEventListener("click", manageProductHandler);
+
+addService.addEventListener("submit", addServiceHandler);
+
+print.addEventListener("click", printHandler);
