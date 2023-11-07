@@ -1,6 +1,6 @@
 import { products } from "../core/data";
-import { cartBody, productCard, productList } from "../core/selectors"
-import { addToCart, createCartItem } from "./cart";
+import { cartBody, cartBtn, productCard, productList } from "../core/selectors"
+import { addToCart, addedToCart, createCartItem } from "./cart";
 
 export const createProductCard = ({ id, title, price, description, image, rating: { rate, count } }) => {
     const clone = productCard.content.cloneNode(true);
@@ -12,7 +12,7 @@ export const createProductCard = ({ id, title, price, description, image, rating
     const productCardPrice = productCardUi.querySelector(".product-card-price .price");
     const productCardRating = productCardUi.querySelector(".rating-text");
     const productCardRatingStars = productCardUi.querySelector(".rating-stars");
-    const addToCart = productCardUi.querySelector(".add-to-cart");
+    const addToCartBtn = productCardUi.querySelector(".add-to-cart");
 
     productCardTitle.innerText = title;
     productCardDescription.innerText = description;
@@ -22,11 +22,18 @@ export const createProductCard = ({ id, title, price, description, image, rating
     // productCardRatingStars.innerHTML = stars(rate);
     productCardRatingStars.append(stars(rate));
 
+    const isExitInCart = cartBody.querySelector(`[cart-product-id='${id}']`);
+    // console.log(isExitInCart);
+
+    if (isExitInCart) {
+        addedToCart(addToCartBtn);
+    }
 
     return productCardUi;
 }
 
 export const productRender = (productArr) => {
+    productList.innerHTML = "";
     productArr.forEach(el => productList.append(createProductCard(el)));
 }
 
@@ -61,16 +68,56 @@ export const stars = (rate) => {
 
 export const productListHandler = (event) => {
     if (event.target.classList.contains("add-to-cart")) {
-        event.target.classList.add("bg-neutral-600", "text-white", "duration-300");
-        event.target.disabled = true;
-        event.target.innerText = "Added";
         const currentProductCard = event.target.closest(".product-card");
         const currentProductId = currentProductCard.getAttribute("product-id");
-        const currentProduct = products.find(el => el.id == currentProductId);
+
+        const currentAddToCartBtn = currentProductCard.querySelector(".add-to-cart");
+
         // console.log(currentProductCard);
         // console.log(currentProductId);
-        // console.log(currentProduct);
 
         addToCart(currentProductId);
+
+        const currentImg = currentProductCard.querySelector(".product-card-img");
+        const currentImgPosition = currentImg.getBoundingClientRect();
+
+        const cartBtnPosition = cartBtn.getBoundingClientRect();
+
+
+        const img = new Image();
+        img.src = currentImg.src;
+        img.classList.add("fixed", `h-32`, `z-50`);
+        img.style.top = currentImgPosition.top + "px";
+        img.style.left = currentImgPosition.left + "px";
+
+        const keyframe = [
+            { top: `${currentImgPosition.top}px`, left: `${currentImgPosition.left}px` },
+            { top: cartBtnPosition.top + 10 + "px", left: cartBtnPosition.left + 10 + "px", height: `10px`, rotate: `2turn` },
+
+        ];
+
+        const options = {
+            fill: "both",
+            duration: 500,
+            iterations: 1,
+        };
+
+        const imgAnimation = img.animate(keyframe, options);
+
+
+        imgAnimation.addEventListener("finish", () => {
+            img.remove();
+            cartBtn.classList.add("animate__tada");
+            cartBtn.addEventListener("animationend", () => {
+                cartBtn.classList.remove("animate__tada");
+            })
+        })
+
+
+
+        app.append(img);
+
+
+        addedToCart(currentAddToCartBtn);
     }
 }
