@@ -1,5 +1,5 @@
 import { products } from "../core/data";
-import { cartBody, cartBtn, productCard, productList } from "../core/selectors"
+import { cartBody, cartBox, cartBtn, productCard, productList } from "../core/selectors"
 import { addToCart, addedToCart, createCartItem } from "./cart";
 
 export const createProductCard = ({ id, title, price, description, image, rating: { rate, count } }) => {
@@ -76,7 +76,6 @@ export const productListHandler = (event) => {
         // console.log(currentProductCard);
         // console.log(currentProductId);
 
-        addToCart(currentProductId);
 
         const currentImg = currentProductCard.querySelector(".product-card-img");
         const currentImgPosition = currentImg.getBoundingClientRect();
@@ -90,11 +89,27 @@ export const productListHandler = (event) => {
         img.style.top = currentImgPosition.top + "px";
         img.style.left = currentImgPosition.left + "px";
 
-        const keyframe = [
-            { top: `${currentImgPosition.top}px`, left: `${currentImgPosition.left}px` },
-            { top: cartBtnPosition.top + 10 + "px", left: cartBtnPosition.left + 10 + "px", height: `10px`, rotate: `2turn` },
+        let keyframe;
 
-        ];
+        if (cartBox.classList.contains("translate-x-full")) {
+
+            keyframe = [
+                { top: currentImgPosition.top + "px", left: currentImgPosition.left + "px" },
+                { top: cartBtnPosition.top + 10 + "px", left: cartBtnPosition.left + 10 + "px", height: 10 + "px", rotate: `2turn` },
+
+            ];
+        } else {
+
+            const lastCartPosition = document.querySelector(".cart-item:last-child")?.getBoundingClientRect();
+            const aniTop = lastCartPosition ? lastCartPosition.top + lastCartPosition.height + 10 : cartBody.getBoundingClientRect().top;
+            const aniLeft = lastCartPosition ? lastCartPosition.left + 10 : cartBody.getBoundingClientRect().left;
+
+            keyframe = [
+                { top: currentImgPosition.top + 10 + "px", left: currentImgPosition.left + 10 + "px" },
+                { top: aniTop + "px", left: aniLeft + "px", height: 10 + "px", rotate: `2turn` },
+
+            ];
+        }
 
         const options = {
             fill: "both",
@@ -107,6 +122,7 @@ export const productListHandler = (event) => {
 
         imgAnimation.addEventListener("finish", () => {
             img.remove();
+            addToCart(currentProductId);
             cartBtn.classList.add("animate__tada");
             cartBtn.addEventListener("animationend", () => {
                 cartBtn.classList.remove("animate__tada");

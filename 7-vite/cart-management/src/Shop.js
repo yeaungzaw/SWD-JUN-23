@@ -2,8 +2,8 @@ import { cartBodyHandler, cartObserver } from "./app/cart";
 import { categoryListHandler, categoryRender } from "./app/category";
 import { productListHandler, productRender } from "./app/product";
 import { categories, products } from "./core/data";
-import { cartBtnHandler } from "./core/handlers";
-import { cartBody, cartBtn, cartCloseBtn, categoryList, productList } from "./core/selectors";
+import { cartBtnHandler, clearSearchBarInputHandler, searchBarInputHandler, searchBtnHandler } from "./core/handlers";
+import { cartBody, cartBtn, cartCloseBtn, categoryList, clearSearchBarInput, productList, searchBarInput, searchBtn } from "./core/selectors";
 
 class Shop {
 
@@ -22,6 +22,9 @@ class Shop {
         productList.addEventListener("click", productListHandler);
         cartBody.addEventListener("click", cartBodyHandler);
         categoryList.addEventListener("click", categoryListHandler);
+        searchBtn.addEventListener("click", searchBtnHandler);
+        searchBarInput.addEventListener("keyup", searchBarInputHandler);
+        clearSearchBarInput.addEventListener("click", clearSearchBarInputHandler);
     }
 
     init() {
