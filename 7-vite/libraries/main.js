@@ -3,6 +3,9 @@ import './index.css';
 import Glide from '@glidejs/glide';
 import VenoBox from 'venobox';
 import 'flowbite';
+import Typed from 'typed.js';
+import Aos from 'aos';
+import WOW from 'wow.js';
 
 
 const glideOptions = {
@@ -48,3 +51,32 @@ const openDrawerHandler = () => {
 }
 
 openDrawer.addEventListener("click", openDrawerHandler);
+
+// Type JS
+const typed = new Typed("#element", {
+  strings: [
+    "I'm a <i>Frontend Web Developer</i>", 
+    "I'm a <i>UI / UX Developer</i>", 
+    "I'm a <i>Backend Developer</i>", 
+    "I'm a <i>Full Stack Developer</i>"
+  ],
+  typeSpeed: 50,
+  startDelay: 1000,
+  backSpeed: 10,
+  backDelay: 3000,
+  loop: true,
+  loopCount: Infinity,
+})
+
+// AOS Content Animation
+Aos.init({
+  // delay: 1000,
+  offset: 200,
+  // once: true,
+  duration: 1000,
+});
+
+new WOW({
+  boxClass:     'wow',      // animated element css class (default is wow)
+  animateClass: 'animate__animated',
+}).init()
