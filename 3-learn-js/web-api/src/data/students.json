@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Kyaw Kyaw",
+        "major": "SWD"
+    },
+    {
+        "id": 2,
+        "name": "Aung Aung",
+        "major": "BWD"
+    },
+    {
+        "id": 3,
+        "name": "Mg Mg",
+        "major": "WAD"
+    }
+]
