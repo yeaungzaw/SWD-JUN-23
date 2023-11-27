@@ -40,9 +40,9 @@ const numbers = [14, 2, 5, 3, 7, 2, 1, 1];
 // console.log(numbers.reduce((pv, cv) => pv + (cv * 2), 0));
 
 
-// 2,1 Functional Programming
+// 2.1 Functional Programming
 
-// 1. Pure Functions: avoids changing state and mutable data
+// 2.1.1. Pure Functions: avoids changing state and mutable data
 
 // Impure function with side effect
 let total = 0;
@@ -64,7 +64,7 @@ function pureAdd(x, y) {
 // console.log(pureAdd(3, 5)); // 8
 // console.log(pureAdd(3, 5)); // 8
 
-// 2. Higher Order Function
+// 2.1.2 Higher Order Function
 
 const arrayFilter = (arr, filter) => {
     let result = [];
@@ -89,7 +89,7 @@ const arrayMap = (arr, map) => {
 // console.log(arrayMap(numbers, (el) => el * 2));
 
 
-// 3. Immutable
+// 2.1.3. Immutable
 
 const obj = {
     name: "yeaungzaw",
@@ -113,7 +113,7 @@ const obj = {
 // console.log(obj);
 
 
-// 4. Recursion
+// 2.1.4. Recursion
 
 function factorial(n) {
     if (n === 0) return 1;
@@ -123,4 +123,6 @@ function factorial(n) {
 // console.log(factorial(5));
 
 
-// 5. Function Composition
+// 2.1.5. Function Composition
+
+

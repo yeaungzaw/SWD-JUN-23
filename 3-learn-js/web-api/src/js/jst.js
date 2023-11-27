@@ -4,7 +4,7 @@
 //     c: "ccc"
 // }
 
-// const arr = ["aaa", "bbb", "ccc"]
+const arr = ["aaa", "bbb", "ccc"]
 
 // const json1 = JSON.stringify(obj);
 // const json2 = JSON.stringify(arr);
@@ -68,7 +68,7 @@ storeBtn.addEventListener("click", () => {
 
     // localStorage.setItem("obj", JSON.stringify({a: "aaa", b: "bbb", c: "ccc"}));
 
-    document.cookie = "name=ye aung zaw";
-    document.cookie = "age=29; expires=Sat Nov 25 2023 22:00:00 GMT";
+    // document.cookie = "name=ye aung zaw";
+    // document.cookie = "age=29; expires=Sat Nov 25 2023 22:00:00 GMT";
 
 })
