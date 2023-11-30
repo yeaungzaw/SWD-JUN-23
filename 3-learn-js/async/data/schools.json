@@ -1,0 +1,105 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Web Development Foundation",
+      "short_name": "WDF",
+      "fee": 50000
+    },
+    {
+      "id": 3,
+      "title": "Web App Development",
+      "short_name": "WAD",
+      "fee": 300000
+    },
+    {
+      "title": "Figma Basic",
+      "short_name": "FGB",
+      "fee": 100000,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "title": "Figma Master",
+      "short_name": "PUD",
+      "fee": 100000
+    },
+    {
+      "title": "Intro to AI",
+      "short_name": "ITA",
+      "fee": 150000,
+      "id": 6
+    }
+  ],
+  "batches": [
+    {
+      "id": 1,
+      "name": "SWD June Weekday"
+    },
+    {
+      "id": 2,
+      "name": "SWD June Weekend"
+    },
+    {
+      "id": 3,
+      "name": "SWD Aug Weekday"
+    },
+    {
+      "id": 4,
+      "name": "SWD OCT Weekday"
+    },
+    {
+      "name": "my testing",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "name": "PUD Dec Weekday"
+    },
+    {
+      "title": "Workshop Dev 2023",
+      "id": 8
+    },
+    {
+      "title": "React Dev 2023",
+      "id": 9
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "kyaw kyaw",
+      "phone": "0923423521",
+      "batch": "SWD June Weekday",
+      "course": "SWD"
+    },
+    {
+      "id": 2,
+      "name": "Hla Hla",
+      "phone": "0962342344",
+      "batch": "SWD Nov Weekday",
+      "course": "BUD"
+    },
+    {
+      "id": 3,
+      "name": "Su Su",
+      "phone": "092362885",
+      "batch": "SWD June Weekend",
+      "course": "SWD"
+    },
+    {
+      "id": 4,
+      "name": "Aye Aye",
+      "phone": "0945232353",
+      "batch": "SWD DEC Weekend",
+      "course": "PUD"
+    },
+    {
+      "name": "Min Min Aung",
+      "phone": "0973643676",
+      "batch": "WDF Aug Weekend",
+      "course": "WDF",
+      "id": 6
+    }
+  ]
+}
