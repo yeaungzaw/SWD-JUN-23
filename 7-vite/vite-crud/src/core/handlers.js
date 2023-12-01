@@ -4,7 +4,7 @@ import { courseEditForm, courseForm, editDrawer, rowGroup } from "./selectors";
 
 export const courseFormHandler = (event) => {
     event.preventDefault();
-    console.log("submit");
+    // console.log("submit");
 
     const formData = new FormData(courseForm);
     const json = JSON.stringify(
