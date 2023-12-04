@@ -1,13 +1,13 @@
 import Swal from "sweetalert2";
-import { rowRender, rowUi, toast, url } from "./functions";
+import { confirmBox, editRow, removeRow, rowRender, rowUi, toast, url } from "./functions";
 import { courseEditForm, courseForm, editDrawer, rowGroup } from "./selectors";
 
-export const courseFormHandler = (event) => {
+export const courseFormHandler = async (event) => {
     event.preventDefault();
     // console.log("submit");
 
     const formData = new FormData(courseForm);
-    const json = JSON.stringify(
+    const jsonData = JSON.stringify(
         {
             title: formData.get('course_title'),
             short_name: formData.get('short_name'),
@@ -20,67 +20,39 @@ export const courseFormHandler = (event) => {
 
     courseForm.querySelector("button").toggleAttribute("disabled");
 
-    fetch(url("/courses"), {
+    // fetch(url("/courses"), {
+    //     method: "POST",
+    //     headers: myHeader,
+    //     body: jsonData
+    // })
+    //     .then(res => res.json())
+    //     .then(json => {
+    //         courseForm.querySelector("button").toggleAttribute("disabled");
+    //         rowGroup.append(rowUi(json));
+    //         courseForm.reset();
+    //         toast("Course Create Successfully");
+    //     });
+
+    const res = await fetch(url("/courses"), {
         method: "POST",
         headers: myHeader,
-        body: json
-    })
-        .then(res => res.json())
-        .then(json => {
-            courseForm.querySelector("button").toggleAttribute("disabled");
-            rowGroup.append(rowUi(json));
-            courseForm.reset();
-            toast("Course Create Successfully");
-        });
+        body: jsonData
+    });
+
+    const json = await res.json();
+
+    courseForm.querySelector("button").toggleAttribute("disabled");
+    rowGroup.append(rowUi(json));
+    courseForm.reset();
+    toast("Course Create Successfully");
 }
 
 export const rowGroupHandler = (event) => {
     if (event.target.classList.contains("row-del")) {
-        const currentRow = event.target.closest("tr");
-        const currentRowId = currentRow.getAttribute("course-id");
-
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                event.target.toggleAttribute("disabled");
-                fetch(url("/courses/" + currentRowId), {
-                    method: "DELETE",
-                })
-                    .then(res => {
-                        event.target.toggleAttribute("disabled");
-
-                        if (res.status == 204) {
-                            toast("Course Deleted Successfully")
-                            currentRow.remove();
-                        }
-                    })
-            }
-        });
+        removeRow(event.target.closest("tr").getAttribute("course-id"));
 
     } else if (event.target.classList.contains("row-edit")) {
-        const currentRow = event.target.closest("tr");
-        const currentRowId = currentRow.getAttribute("course-id");
-
-        event.target.toggleAttribute("disabled");
-
-        // 1. retrieve old value
-        fetch(url("/courses/" + currentRowId)).then(res => res.json()).then(json => {
-            // 2. show old value
-            editDrawer.show();
-            courseEditForm.querySelector("#edit_course_id").value = json.id;
-            courseEditForm.querySelector("#edit_course_title").value = json.title;
-            courseEditForm.querySelector("#edit_short_name").value = json.short_name;
-            courseEditForm.querySelector("#edit_course_fee").value = json.fee;
-            event.target.toggleAttribute("disabled");
-        })
-        // 3. changes update
+        editRow(event.target.closest("tr").getAttribute("course-id"));
     }
 }
 
@@ -180,15 +152,15 @@ export const searchInputHandler = (event) => {
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
           </svg>`;
 
-          if (json.length) {
-            rowRender(json);
-          } else {
-            toast("Course Not Found");
-            rowGroup.innerHTML = `
+            if (json.length) {
+                rowRender(json);
+            } else {
+                toast("Course Not Found");
+                rowGroup.innerHTML = `
                 <tr>
                     <td class="text-center px-6 py-3" colspan='5'>There is no course that you searched <a class="text-blue-500 underline text-sm" href="http://${location.host}">Browse all</a></td>
                 </tr>
             `;
-          }
+            }
         })
 }
