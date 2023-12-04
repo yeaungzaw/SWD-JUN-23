@@ -4,7 +4,7 @@ export default {
   // ...
   plugins: [
     jsonServer({
-      delay: 1000,
+      delay: 3000,
     }),
   ],
 };
