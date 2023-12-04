@@ -11,9 +11,23 @@ class Shop {
         cartObserver();
     }
 
-    initialRender() {
-        categoryRender(categories);
-        productRender(products);
+    // initialRender() {
+    //     fetch("http://localhost:3000/products")
+    //     .then(res => res.json())
+    //     .then(json => productRender(json));
+    //     fetch("http://localhost:3000/categories")
+    //     .then(res => res.json())
+    //     .then(json => categoryRender(json));
+    // }
+
+    async initialRender() {
+        const categoryRes = await fetch("http://localhost:3000/categories");
+        const categoryJson = await categoryRes.json();
+        categoryRender(categoryJson);
+
+        const productRes = await fetch("http://localhost:3000/products");
+        const productJson = await productRes.json();
+        productRender(productJson);
     }
 
     listener() {
