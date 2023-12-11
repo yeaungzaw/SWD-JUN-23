@@ -6,7 +6,7 @@ const ListGroup = () => {
       <div className="hidden last:flex flex-col justify-center items-center py-16">
         <img
           className="w-28 mb-3"
-          src="../../src/img/undraw_no_data_re_kwbl.svg"
+          src="../src/img/empty.svg"
           alt=""
         />
         <p className="text-sm text-stone-600">There is no List</p>
