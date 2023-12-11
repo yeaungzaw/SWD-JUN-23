@@ -7,7 +7,6 @@ const ListGroup = () => {
         <img
           className="w-28 mb-3"
           src="../src/img/empty.svg"
-          alt=""
         />
         <p className="text-sm text-stone-600">There is no List</p>
       </div>
