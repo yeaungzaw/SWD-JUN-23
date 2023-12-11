@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = () => {
+const CheckoutForm = () => {
   return (
     <div>
       <form id="addRecord" className="mb-5 print:hidden" action>
@@ -29,4 +29,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default CheckoutForm;

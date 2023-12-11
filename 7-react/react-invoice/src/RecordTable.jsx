@@ -1,6 +1,6 @@
 import React from "react";
 
-const Table = () => {
+const RecordTable = () => {
   return (
     <div>
       <table className="w-full mb-5">
@@ -35,4 +35,4 @@ const Table = () => {
   );
 };
 
-export default Table;
+export default RecordTable;
