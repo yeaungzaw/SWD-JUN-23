@@ -1,15 +1,11 @@
 import React from "react";
+import EmptyStage from "./EmptyStage";
 
 const ListGroup = () => {
   return (
     <div id="taskLists" className="font-body">
-      <div className="hidden last:flex flex-col justify-center items-center py-16">
-        <img
-          className="w-28 mb-3"
-          src="../src/img/empty.svg"
-        />
-        <p className="text-sm text-stone-600">There is no List</p>
-      </div>
+      <EmptyStage />
+      <List />
     </div>
   );
 };
