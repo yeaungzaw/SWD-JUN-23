@@ -1,21 +1,24 @@
 import React from "react";
 
-const Form = () => {
+const CreateForm = () => {
   return (
-    <div className="add-new-list border flex mb-10">
+    <div className="flex mb-5">
       <input
-        id="textInput"
-        className="flex-grow border-2 border-black px-3 focus-visible:outline-none"
+        className="flex-grow border border-neutral-700 h-14 px-3 focus-visible:outline-none"
         type="text"
+        id="textInput"
       />
-      <button id="addBtn" className="bg-black text-white p-3">
+      <button
+        id="addBtn"
+        className="h-14 w-14 bg-neutral-700 text-white flex justify-center items-center"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-6 h-6 pointer-events-none"
+          className="w-4 h-4 stroke-1"
         >
           <path
             strokeLinecap="round"
@@ -28,4 +31,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default CreateForm;
