@@ -7,8 +7,7 @@ const Course = ({ title, studentCount }) => {
   return (
     studentCount > 0 && (
       <div className={` border-s-4 ${borderBgClass} mb-3 p-3 flex gap-2`}>
-        <p>{studentCount}</p>
-        <p>{title}</p>
+        {studentCount} {title}
       </div>
     )
   );
