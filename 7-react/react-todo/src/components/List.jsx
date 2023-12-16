@@ -9,7 +9,7 @@ const List = () => {
             className="list-check accent-neutral-700 w-4 h-4"
             type="checkbox"
           />
-          <div className="list-text" />
+          <div className="list-text">apple</div>
         </div>
         <div className="control opacity-100 pointer-events-none duration-300 translate-x-[100px] group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-x-0 flex gap-1">
           <button className="list-edit duration-300 active:scale-75 disabled:opacity-20">
