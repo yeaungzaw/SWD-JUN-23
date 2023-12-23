@@ -3,7 +3,7 @@ import RecordGroup from "./RecordGroup";
 import EmptyStage from "./EmptyStage";
 import Record from "./Record";
 
-const RecordTable = () => {
+const RecordTable = ({ records, removeRecord }) => {
   return (
     <section>
       <div className="relative shadow-md sm:rounded-lg overflow-hidden">
@@ -28,7 +28,7 @@ const RecordTable = () => {
             </tr>
           </thead>
           <tbody id="recordGroup">
-            <RecordGroup />
+            <RecordGroup records={records} removeRecord={removeRecord} />
           </tbody>
           <tfoot>
             <tr className="border-b">
@@ -36,7 +36,7 @@ const RecordTable = () => {
                 Total
               </td>
               <td className="px-6 py-4 text-end" id="recordTotal">
-                2500
+                {records.reduce((pv, cv) => pv + cv.cost, 0).toFixed(2)}
               </td>
             </tr>
           </tfoot>
