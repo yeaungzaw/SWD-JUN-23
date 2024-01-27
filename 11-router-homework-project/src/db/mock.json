@@ -1,0 +1,44 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "img": "https://template.hasthemes.com/hurst-v1/hurst/img/product/6.jpg",
+            "title": "DUMMY PRODUCT NAME"
+        },
+        {
+            "id": "2",
+            "img": "https://template.hasthemes.com/hurst-v1/hurst/img/product/3.jpg",
+            "title": "DUMMY PRODUCT NAME"
+        },
+        {
+            "id": "3",
+            "img": "https://template.hasthemes.com/hurst-v1/hurst/img/product/7.jpg",
+            "title": "DUMMY PRODUCT NAME"
+        },
+        {
+            "id": "4",
+            "img": "https://template.hasthemes.com/hurst-v1/hurst/img/product/10.jpg",
+            "title": "DUMMY PRODUCT NAME"
+        },
+        {
+            "id": "5",
+            "img": "https://template.hasthemes.com/hurst-v1/hurst/img/product/8.jpg",
+            "title": "DUMMY PRODUCT NAME"
+        },
+        {
+            "id": "6",
+            "img": "https://template.hasthemes.com/hurst-v1/hurst/img/product/11.jpg",
+            "title": "DUMMY PRODUCT NAME"
+        },
+        {
+            "id": "7",
+            "img": "https://template.hasthemes.com/hurst-v1/hurst/img/product/2.jpg",
+            "title": "DUMMY PRODUCT NAME"
+        },
+        {
+            "id": "8",
+            "img": "https://template.hasthemes.com/hurst-v1/hurst/img/product/1.jpg",
+            "title": "DUMMY PRODUCT NAME"
+        }
+    ]
+}
