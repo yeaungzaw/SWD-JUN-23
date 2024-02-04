@@ -32,17 +32,17 @@ const App = () => {
   ];
   return (
     <div className="w-[400px] mx-auto mt-20">
-      {/* <Heading/> */}
-      {/* <CreateForm /> */}
-      {/* <Status /> */}
-      {/* <ListGroup /> */}
+      <Heading />
+      <CreateForm />
+      <Status />
+      <ListGroup />
       {/* <Counter /> */}
       {/* <Input /> */}
       {/* <Checker /> */}
 
-      {questions.map(({ id, question, answer }) => (
+      {/* {questions.map(({ id, question, answer }) => (
         <Accordion key={id} question={question} answer={answer} />
-      ))}
+      ))} */}
     </div>
   );
 };

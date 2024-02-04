@@ -1,18 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
+import EditInput from "./EditInput";
 
-const List = () => {
+const List = ({ id, job, isDone, deleteTask, doneTask, updateTaskJob }) => {
+  const [edit, setEdit] = useState(false);
+  const [updateInput, setUpdateInput] = useState(job);
+  // console.log(updateInput);
+
+  const handleCheck = () => {
+    doneTask(id);
+  };
+  const handleDelBtn = () => {
+    deleteTask(id);
+  };
+
+  const handleEditBtn = () => {
+    console.log("U edit ", id);
+    setEdit(!edit);
+  };
+
+  const handleUpdateInput = (event) => {
+    setUpdateInput(event.target.value);
+  };
+
+  const handleUpdateInputBlur = () => {
+    console.log("U exit");
+    setEdit(false);
+    updateTaskJob(id, updateInput);
+  };
+
   return (
     <div className="list">
-      <div className="group animate__animated animate__fadeInLeft border mb-3 overflow-hidden border-neutral-700 p-5 flex justify-between items-center">
-        <div className="content flex items-center gap-3">
-          <input
-            className="list-check accent-neutral-700 w-4 h-4"
-            type="checkbox"
+      <div className="group  border mb-3 overflow-hidden border-neutral-700 p-5 flex justify-between items-center">
+        {edit ? (
+          <EditInput
+            updateInput={updateInput}
+            handleUpdateInput={handleUpdateInput}
+            handleUpdateInputBlur={handleUpdateInputBlur}
           />
-          <div className="list-text">apple</div>
-        </div>
+        ) : (
+          <div className="content flex items-center gap-3">
+            <input
+              className="list-check accent-neutral-700 w-4 h-4"
+              type="checkbox"
+              checked={isDone}
+              onChange={handleCheck}
+              id={`list` + id}
+            />
+            <label
+              htmlFor={`list` + id}
+              className={`${isDone && "line-through"} select-none`}
+            >
+              {job}
+            </label>
+          </div>
+        )}
+
         <div className="control opacity-100 pointer-events-none duration-300 translate-x-[100px] group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-x-0 flex gap-1">
-          <button className="list-edit duration-300 active:scale-75 disabled:opacity-20">
+          <button
+            onClick={handleEditBtn}
+            className={`list-edit duration-300 active:scale-75 disabled:opacity-20 ${
+              isDone && "opacity-20 pointer-events-none"
+            }`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -28,7 +77,10 @@ const List = () => {
               />
             </svg>
           </button>
-          <button className="list-del duration-300 active:scale-75">
+          <button
+            onClick={handleDelBtn}
+            className="list-del duration-300 active:scale-75"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

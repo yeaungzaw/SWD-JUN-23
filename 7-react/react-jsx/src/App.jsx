@@ -7,7 +7,7 @@ const App = () => {
       <Heading />
       <CourseGroup />
     </div>
-  )
-}
+  );
+};
 
 export default App;

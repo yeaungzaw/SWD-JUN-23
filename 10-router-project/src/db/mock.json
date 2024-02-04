@@ -1,88 +1,102 @@
 {
-    "book": [
-        {
-          "id": "1",
-          "title": "The Catcher in the Rye",
-          "author": "J.D. Salinger",
-          "slug": "catcher-in-the-rye",
-          "description": "A classic novel about the struggles of a teenage boy named Holden Caulfield in New York City."
-        },
-        {
-          "id": "2",
-          "title": "To Kill a Mockingbird",
-          "author": "Harper Lee",
-          "slug": "to-kill-a-mockingbird",
-          "description": "Set in the American South during the 1930s, this novel explores racial injustice and moral growth through the eyes of a young girl named Scout Finch."
-        },
-        {
-          "id": "3",
-          "title": "1984",
-          "author": "George Orwell",
-          "slug": "1984",
-          "description": "A dystopian novel depicting a totalitarian society where the government controls every aspect of life, written by George Orwell."
-        },
-        {
-          "id": "4",
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "slug": "the-great-gatsby",
-          "description": "Set in the Roaring Twenties, this novel explores the American Dream and the complexities of love and wealth."
-        },
-        {
-          "id": "5",
-          "title": "Harry Potter and the Sorcerer's Stone",
-          "author": "J.K. Rowling",
-          "slug": "harry-potter-sorcerers-stone",
-          "description": "The first book in the Harry Potter series, following the young wizard Harry as he discovers his magical abilities and embarks on a journey at Hogwarts School of Witchcraft and Wizardry."
-        },
-        {
-          "id": "6",
-          "title": "The Hobbit",
-          "author": "J.R.R. Tolkien",
-          "slug": "the-hobbit",
-          "description": "A fantasy novel that follows Bilbo Baggins, a hobbit who goes on an epic adventure to help a group of dwarves reclaim their homeland from a dragon."
-        },
-        {
-          "id": "7",
-          "title": "Pride and Prejudice",
-          "author": "Jane Austen",
-          "slug": "pride-and-prejudice",
-          "description": "A classic novel exploring themes of love, class, and societal expectations in 19th-century England."
-        },
-        {
-          "id": "8",
-          "title": "The Lord of the Rings",
-          "author": "J.R.R. Tolkien",
-          "slug": "the-lord-of-the-rings",
-          "description": "A high fantasy trilogy following the quest to destroy the One Ring and save Middle-earth, written by J.R.R. Tolkien."
-        },
-        {
-          "id": "9",
-          "title": "Brave New World",
-          "author": "Aldous Huxley",
-          "slug": "brave-new-world",
-          "description": "A dystopian novel that explores a futuristic society where stability and conformity are prioritized over individual freedom."
-        },
-        {
-          "id": "10",
-          "title": "The Odyssey",
-          "author": "Homer",
-          "slug": "the-odyssey",
-          "description": "An ancient Greek epic poem attributed to Homer, telling the story of Odysseus and his adventures as he tries to return home after the Trojan War."
-        }
-    ],
-    "author": [
-      {
-        "id": "1",
-        "name": "terry"
-      },
-      {
-        "id": "2",
-        "name": "tom"
-      },
-      {
-        "id": "3",
-        "name": "jerry"
-      }
-    ]
+  "book": [
+    {
+      "id": "1",
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "slug": "catcher-in-the-rye",
+      "description": "A classic novel about the struggles of a teenage boy named Holden Caulfield in New York City."
+    },
+    {
+      "id": "2",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "slug": "to-kill-a-mockingbird",
+      "description": "Set in the American South during the 1930s, this novel explores racial injustice and moral growth through the eyes of a young girl named Scout Finch."
+    },
+    {
+      "id": "3",
+      "title": "1984",
+      "author": "George Orwell",
+      "slug": "1984",
+      "description": "A dystopian novel depicting a totalitarian society where the government controls every aspect of life, written by George Orwell."
+    },
+    {
+      "id": "4",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "slug": "the-great-gatsby",
+      "description": "Set in the Roaring Twenties, this novel explores the American Dream and the complexities of love and wealth."
+    },
+    {
+      "id": "5",
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "slug": "harry-potter-sorcerers-stone",
+      "description": "The first book in the Harry Potter series, following the young wizard Harry as he discovers his magical abilities and embarks on a journey at Hogwarts School of Witchcraft and Wizardry."
+    },
+    {
+      "id": "6",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "slug": "the-hobbit",
+      "description": "A fantasy novel that follows Bilbo Baggins, a hobbit who goes on an epic adventure to help a group of dwarves reclaim their homeland from a dragon."
+    },
+    {
+      "id": "7",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "slug": "pride-and-prejudice",
+      "description": "A classic novel exploring themes of love, class, and societal expectations in 19th-century England."
+    },
+    {
+      "id": "8",
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "slug": "the-lord-of-the-rings",
+      "description": "A high fantasy trilogy following the quest to destroy the One Ring and save Middle-earth, written by J.R.R. Tolkien."
+    },
+    {
+      "id": "9",
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "slug": "brave-new-world",
+      "description": "A dystopian novel that explores a futuristic society where stability and conformity are prioritized over individual freedom."
+    },
+    {
+      "id": "10",
+      "title": "The Odyssey",
+      "author": "Homer",
+      "slug": "the-odyssey",
+      "description": "An ancient Greek epic poem attributed to Homer, telling the story of Odysseus and his adventures as he tries to return home after the Trojan War."
+    }
+  ],
+  "author": [
+    {
+      "id": "1",
+      "name": "terry"
+    },
+    {
+      "id": "2",
+      "name": "tom"
+    },
+    {
+      "id": "3",
+      "name": "jerry"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "username": "Terry",
+      "email": "yeaungzaw.learner@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "Terry",
+      "email": "yeagzaw@gmail.com",
+      "password": "789123"
+    }
+  ]
 }
