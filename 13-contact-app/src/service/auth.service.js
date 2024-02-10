@@ -1,8 +1,8 @@
 import { api } from "./api";
 
-export const Register = async (data) => {
+export const Register = async (formData) => {
   try {
-    const res = await api.post("/register", data);
+    const res = await api.post("register", formData);
     return res;
   } catch (e) {
     return { error: true, msg: e.message };
@@ -11,7 +11,7 @@ export const Register = async (data) => {
 
 export const Login = async (formData) => {
   try {
-    const res = await api.post("/login", formData);
+    const res = await api.post("login", formData);
     const { data } = res;
 
     if (data.token) {
