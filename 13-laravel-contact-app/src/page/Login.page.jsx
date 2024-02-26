@@ -8,10 +8,10 @@ import {
   PreventComponents,
 } from "../components";
 import { useNavigate } from "react-router-dom";
-import useApi from "../hook/useApi";
-import { Login } from "../service/auth.service";
 import { useDispatch, useSelector } from "react-redux";
 import { LoginAction } from "../store/action/auth.action";
+import { login, processing } from "../store/slice/auth.slice";
+import { Login } from "../service/auth.service";
 
 const LoginPage = () => {
   const nav = useNavigate();
@@ -22,18 +22,20 @@ const LoginPage = () => {
     password: "",
   });
 
+  const handleInputChange = (e) =>
+    setFormData((pre) => ({ ...pre, [e.target.name]: e.target.value }));
+
   useEffect(() => {
     if (data) {
       nav("/home");
     }
   }, [data]);
 
-  const handleInputChange = (e) =>
-    setFormData((pre) => ({ ...pre, [e.target.name]: e.target.value }));
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    LoginAction(dispatch, formData);
+    dispatch(processing()); // loading - true
+    const res = await Login(formData);
+    dispatch(login(res.data));
   };
 
   return (
