@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { deleteContact, getContactData } from "../service/contact.service";
-import LoadingComponents from "../components/Loading.components";
-import ContactCardComponents from "../components/ContactCard.components";
+import { ContactCardComponents, LoadingComponents } from "../components";
+import { useGetContactQuery } from "../store/services/endpoints/contact.endpont";
 
 const ContactPage = () => {
+  const { isError, isLoading, data, isSuccess } = useGetContactQuery();
+
+  console.log(isError, isLoading, data, isSuccess);
+
   const [items, setItems] = useState({
     loading: true,
     data: null,
