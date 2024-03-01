@@ -8,27 +8,7 @@ const ContactPage = () => {
 
   console.log(isError, isLoading, data, isSuccess);
 
-  const [items, setItems] = useState({
-    loading: true,
-    data: null,
-    error: null,
-  });
-
   const [del, setDel] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      setItems((pre) => ({ ...pre, loading: true }));
-
-      const res = await getContactData();
-
-      if (res.error) {
-        setItems((pre) => ({ ...pre, loading: false, error: res.msg }));
-      } else {
-        setItems((pre) => ({ ...pre, loading: false, data: res }));
-      }
-    })();
-  }, [del]);
 
   const handleDelete = async (id) => {
     // console.log(id);
@@ -38,14 +18,14 @@ const ContactPage = () => {
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
-      {items.loading ? (
+      {isLoading ? (
         <LoadingComponents />
       ) : (
         <>
-          {items.error ? (
-            <h1>{items.error}</h1>
+          {isError ? (
+            <h1>{isError.message}</h1>
           ) : (
-            items.data.map((i) => (
+            data.contacts.data.map((i) => (
               <ContactCardComponents
                 key={i.id}
                 data={i}
