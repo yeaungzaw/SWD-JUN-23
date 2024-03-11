@@ -1,15 +1,15 @@
 [
     {
         "id": 1,
-        "title": "SWD",
-        "fee": "500000",
+        "title": "Web Dev Foundation",
+        "fee": 50000,
         "status": true,
         "student_count": 15
     },
     {
         "id": 2,
-        "title": "Web Dev Foundation",
-        "fee": "300000",
+        "title": "Special Web Design",
+        "fee": 300000,
         "status": true,
         "student_count": 9
     }
