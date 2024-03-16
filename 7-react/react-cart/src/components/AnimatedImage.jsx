@@ -3,7 +3,7 @@ import { DataContext } from "../context/DataContext";
 
 const AnimatedImage = ({ src, info, setAnimate }) => {
   const styles = {
-    window: info.width + "px",
+    width: info.width + "px",
     height: info.height + "px",
     left: info.left + "px",
     top: info.top + "px",
