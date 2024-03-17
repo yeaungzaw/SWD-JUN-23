@@ -1,11 +1,18 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Container from "./Container";
 import { DataContext } from "../context/DataContext";
 
 const Header = () => {
-  const { toggleCartDrawer, carts, setCartBtnInfo } = useContext(DataContext);
+  const { toggleCartDrawer, carts, setCartBtnInfo, input, setInput } =
+    useContext(DataContext);
 
   const cartBtnRef = useRef();
+  const [searchInputVisible, setSearchInputVisible] = useState(false);
+
+  const handleInput = (e) => {
+    e.preventDefault();
+    setInput(e.target.value);
+  };
 
   useEffect(() => {
     setCartBtnInfo(cartBtnRef.current.getBoundingClientRect());
@@ -20,33 +27,42 @@ const Header = () => {
             <p className="text-neutral-500">E-commerce App</p>
           </div>
           <div className="control-btn flex gap-2">
-            <div
-              id="searchBar"
-              className="border border-neutral-600 h-12 w-60 flex gap-3 px-2 items-center opacity-0 -translate-y-full"
-            >
-              <input
-                id="searchBarInput"
-                type="text"
-                className="flex-grow focus-visible:outline-none"
-              />
-              <button id="clearSearchBarInput">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-5 h-5 stroke-1"
+            {searchInputVisible && (
+              <div
+                id="searchBar"
+                className="relative border border-neutral-600 h-12 w-60 flex gap-3 px-2 items-center"
+              >
+                <input
+                  value={input}
+                  onChange={handleInput}
+                  id="searchBarInput"
+                  type="text"
+                  className="w-full flex-grow focus-visible:outline-none"
+                />
+                <button
+                  onClick={() => setInput("")}
+                  className="absolute right-2"
+                  id="clearSearchBarInput"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.211-.211.498-.33.796-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-9.284c-.298 0-.585-.119-.796-.33z"
-                  />
-                </svg>
-              </button>
-            </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-5 h-5 stroke-1"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.211-.211.498-.33.796-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-9.284c-.298 0-.585-.119-.796-.33z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            )}
             <button
+              onClick={() => setSearchInputVisible(!searchInputVisible)}
               className="border border-neutral-600 duration-100 active:scale-90 h-12 w-12 flex justify-center items-center"
               id="searchBtn"
             >

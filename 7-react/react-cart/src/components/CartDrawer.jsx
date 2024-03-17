@@ -4,9 +4,12 @@ import Cart from "./Cart";
 
 const CartDrawer = () => {
   const { toggleCartDrawer, carts } = useContext(DataContext);
+
   return (
     <section
-      className="cart-box flex flex-col border-s-2 border-neutral-600 fixed w-96 h-screen bg-white top-0 right-0 z-50 duration-300"
+      className={
+        "cart-box flex flex-col border-s-2 border-neutral-600 fixed w-96 h-screen bg-white top-0 right-0 z-50 duration-500"
+      }
       id="cartBox"
     >
       <div className="cart-header px-3 border-b-2 border-neutral-600">
@@ -64,7 +67,7 @@ const CartDrawer = () => {
             <h1 className="font-heading font-bold text-2xl">
               ${" "}
               <span id="cartCostTotal">
-                {carts.reduce((pv, cv) => pv + cv.cost, 0)}
+                {carts.reduce((pv, cv) => pv + cv.cost, 0).toFixed(2)}
               </span>
             </h1>
           </div>

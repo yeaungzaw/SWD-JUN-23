@@ -2,6 +2,10 @@ import React from "react";
 import Container from "./Container";
 
 const Footer = () => {
+  const handleUp = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="mt-auto bg-neutral-600 py-5 text-white">
       <Container>
@@ -12,8 +16,8 @@ const Footer = () => {
               MMS IT
             </a>
           </p>
-          <a
-            href="#headerSpacer"
+          <button
+            onClick={handleUp}
             className="border border-neutral-200 h-12 w-12 flex justify-center items-center"
           >
             <svg
@@ -30,7 +34,7 @@ const Footer = () => {
                 d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
               />
             </svg>
-          </a>
+          </button>
         </div>
       </Container>
     </footer>

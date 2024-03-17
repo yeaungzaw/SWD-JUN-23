@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../context/DataContext";
 
 const Cart = ({
   cart: { product_id, image, title, price, cost, quantity },
 }) => {
+  const { removeCart, handleIncrement, handleDecrement, carts } =
+    useContext(DataContext);
+
   return (
     <div className="cart-item group">
       <div className="w-full mb-5">
@@ -11,7 +15,12 @@ const Cart = ({
           src={image}
         />
         <div className="border bg-white border-neutral-600 p-3 relative">
-          <button className="cart-item-del bg-red-100 text-red-600 p-1 duration-200 absolute pointer-events-none top-3 -right-3 opacity-0 group-hover:opacity-100 group-hover:right-3 group-hover:pointer-events-auto">
+          <button
+            onClick={() => {
+              removeCart(product_id);
+            }}
+            className="cart-item-del bg-red-100 text-red-600 p-1 duration-200 absolute pointer-events-none top-3 -right-3 opacity-0 group-hover:opacity-100 group-hover:right-3 group-hover:pointer-events-auto"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -36,7 +45,10 @@ const Cart = ({
               <span className="cart-item-cost">{cost}</span>
             </p>
             <div className="flex">
-              <button className="bg-neutral-300 duration-100 active:scale-90 cart-item-quantity-decrement p-1">
+              <button
+                onClick={() => quantity > 1 && handleDecrement(product_id)}
+                className="bg-neutral-300 duration-100 active:scale-90 cart-item-quantity-decrement p-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -55,7 +67,12 @@ const Cart = ({
               <p className="cart-item-quantity w-8 text-end bg-neutral-100 pe-1">
                 {quantity}
               </p>
-              <button className="bg-neutral-300 duration-100 active:scale-90 cart-item-quantity-increment p-1">
+              <button
+                onClick={() => {
+                  handleIncrement(product_id);
+                }}
+                className="bg-neutral-300 duration-100 active:scale-90 cart-item-quantity-increment p-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

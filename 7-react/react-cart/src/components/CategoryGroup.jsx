@@ -6,6 +6,15 @@ import Category from "./Category";
 const CategoryGroup = () => {
   const [categories, setCategories] = useState([]);
   const [ready, setReady] = useState(false);
+  const updateCategories = (id) => {
+    setCategories(
+      categories.map((category) =>
+        category.id === id
+          ? { ...category, active: true }
+          : { ...category, active: false }
+      )
+    );
+  };
 
   useEffect(() => {
     const fetchCategory = async () => {
@@ -25,8 +34,6 @@ const CategoryGroup = () => {
           id="categoryList"
           className="flex gap-3 select-none overflow-scroll"
         >
-          <Category cartName="All" />
-
           {!ready && (
             <div className="flex gap-3 animate-pulse">
               <button className="border border-neutral-200 px-4 py-1 flex items-center">
@@ -42,8 +49,12 @@ const CategoryGroup = () => {
           )}
 
           {ready &&
-            categories.map((category, index) => (
-              <Category key={index} cartName={category} />
+            categories.map((category) => (
+              <Category
+                key={category.id}
+                category={category}
+                updateCategories={updateCategories}
+              />
             ))}
         </div>
       </Container>
